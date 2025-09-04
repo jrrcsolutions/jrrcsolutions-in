@@ -16,7 +16,7 @@
       padding: 1rem 2rem; 
       display: flex; 
       justify-content: space-between; 
-      align-items: center; 
+      align-items: center;  /* Aligns logo, text, and nav in middle */
     }
     .brand { 
       display: flex; 
@@ -31,17 +31,24 @@
     .brand a:hover { opacity: 0.9; }
     .brand img { 
       display: block; 
-      height: 64px; 
+      height: 80px;   /* bigger logo */
       width: auto; 
     }
     header h1 { 
       font-family: 'Montserrat', sans-serif; 
-      font-size: 1.8rem; 
+      font-size: 2rem;     /* bigger text to balance with logo */
       margin: 0; 
       display: flex; 
       align-items: center; 
     }
-    nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: bold; }
+    nav { display: flex; align-items: center; }
+    nav a { 
+      color: #fff; 
+      margin: 0 1rem; 
+      text-decoration: none; 
+      font-weight: bold; 
+      font-size: 1.1rem; 
+    }
     nav a:hover { text-decoration: underline; }
 
     .hero { background: #0A3D62; color: #fff; text-align: center; padding: 5rem 2rem; }
