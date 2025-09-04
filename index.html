@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JR Research & Consulting Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Lato&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; }
@@ -17,9 +18,29 @@
       justify-content: space-between; 
       align-items: center; 
     }
-    .brand { display: flex; align-items: center; gap: 0.75rem; }
-    .brand img { display: block; height: 44px; width: auto; border-radius: 6px; }
-    header h1 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; white-space: nowrap; }
+    .brand { 
+      display: flex; 
+      align-items: center; 
+      gap: 1rem; 
+    }
+    .brand a { 
+      display: flex; 
+      align-items: center; 
+      text-decoration: none; 
+    }
+    .brand a:hover { opacity: 0.9; }
+    .brand img { 
+      display: block; 
+      height: 64px; 
+      width: auto; 
+    }
+    header h1 { 
+      font-family: 'Montserrat', sans-serif; 
+      font-size: 1.8rem; 
+      margin: 0; 
+      display: flex; 
+      align-items: center; 
+    }
     nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
 
@@ -56,7 +77,9 @@
 
   <header>
     <div class="brand">
-      <img src="assets/logo.png" alt="JR Research & Consulting Solutions logo" />
+      <a href="index.html">
+        <img src="assets/logo.png" alt="JR Research & Consulting Solutions logo" />
+      </a>
       <h1>JR Research & Consulting Solutions</h1>
     </div>
     <nav>
