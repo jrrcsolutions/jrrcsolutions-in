@@ -13,30 +13,27 @@
     header { 
       background: #0A3D62; 
       color: #fff; 
-      padding: 1rem 2rem; 
+      padding: 1.5rem 2rem; 
       display: flex; 
       justify-content: space-between; 
-      align-items: center;  /* Aligns logo, text, and nav in middle */
+      align-items: center;  /* centers vertically */
     }
     .brand { 
       display: flex; 
       align-items: center; 
       gap: 1rem; 
-    }
-    .brand a { 
-      display: flex; 
-      align-items: center; 
       text-decoration: none; 
+      color: #fff; 
     }
-    .brand a:hover { opacity: 0.9; }
+    .brand:hover { opacity: 0.9; }
     .brand img { 
       display: block; 
-      height: 80px;   /* bigger logo */
+      height: 100px;   /* larger logo */
       width: auto; 
     }
-    header h1 { 
+    .brand h1 { 
       font-family: 'Montserrat', sans-serif; 
-      font-size: 2rem;     /* bigger text to balance with logo */
+      font-size: 2.2rem;  /* bigger text */
       margin: 0; 
       display: flex; 
       align-items: center; 
@@ -74,21 +71,18 @@
     footer p { margin: 0.5rem 0; }
 
     @media(max-width: 768px) {
-      header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-      .brand { width: 100%; }
-      nav { margin-top: 0.25rem; }
+      header { flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; }
+      nav { margin-top: 0.5rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="brand">
-      <a href="index.html">
-        <img src="assets/logo.png" alt="JR Research & Consulting Solutions logo" />
-      </a>
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="JR Research & Consulting Solutions logo" />
       <h1>JR Research & Consulting Solutions</h1>
-    </div>
+    </a>
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
