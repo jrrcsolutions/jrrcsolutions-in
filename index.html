@@ -1,138 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JR Research & Consulting Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Lato&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; }
-
-    header { 
-      background: #0A3D62; 
-      color: #fff; 
-      padding: 1.5rem 2rem; 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
+    :root{
+      --brand:#0A3D62;
+      --brand-2:#124B74;
+      --accent:#F3B33D;
+      --ink:#1b1f23;
+      --muted:#5b6470;
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --ring:rgba(10,61,98,0.14);
+      --shadow:0 10px 25px rgba(10,61,98,0.12), 0 4px 10px rgba(0,0,0,0.04);
+      --radius:14px;
+      --radius-lg:20px;
     }
-    .brand { 
-      display: flex; 
-      align-items: center; 
-      gap: 1rem; 
-      text-decoration: none; 
-      color: #fff; 
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
     }
-    .brand:hover { opacity: 0.9; }
-    .brand img { 
-      height: 90px; 
-      width: auto; 
+    a{color:inherit}
+
+    /* ---------- Header (Centered Brand + Nav) ---------- */
+    header{
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color:#fff;
+      padding: 28px 18px 18px;
+      text-align:center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      backdrop-filter: saturate(140%) blur(6px);
     }
-    .brand h1 { 
-      font-family: 'Montserrat', sans-serif; 
-      font-size: 2rem; 
-      margin: 0; 
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:#fff;
+      margin-bottom:12px;
     }
-    nav { display: flex; align-items: center; }
-    nav a { 
-      color: #fff; 
-      margin: 0 1rem; 
-      text-decoration: none; 
-      font-weight: bold; 
-      font-size: 1.1rem; 
+    .brand img{
+      height:110px; width:auto; display:block;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
     }
-    nav a:hover { text-decoration: underline; }
+    .brand h1{
+      font-family: Poppins, Inter, system-ui, sans-serif;
+      font-weight:600;
+      font-size: clamp(1.4rem, 2.2vw + 1rem, 2.4rem);
+      margin:0;
+      letter-spacing: .2px;
+    }
+    nav{
+      display:flex; justify-content:center; gap:28px; flex-wrap:wrap;
+    }
+    nav a{
+      color:#fff; text-decoration:none; font-weight:600; letter-spacing:.2px;
+      padding:10px 12px; border-radius:10px; transition:.2s ease;
+    }
+    nav a:hover{ background: rgba(255,255,255,0.14) }
 
-    .hero { background: #0A3D62; color: #fff; text-align: center; padding: 5rem 2rem; }
-    .hero h2 { font-size: 2rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
-    .hero button { background: #fff; color: #0A3D62; border: none; padding: 0.8rem 1.5rem; margin: 0.5rem; font-weight: bold; cursor: pointer; border-radius: 5px; }
-    .hero button:hover { background: #f5f5f5; }
+    /* ---------- Hero ---------- */
+    .hero{
+      position:relative;
+      background:
+        radial-gradient(1200px 500px at 50% -200px, rgba(255,255,255,.25), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, #0b3f6750, #0b3f6700 55%),
+        linear-gradient(180deg, #fff, #f7fbff);
+      padding: 72px 18px 64px;
+      text-align:center;
+      overflow:hidden;
+    }
+    .container{ max-width:1100px; margin:0 auto; }
+    .tagline{
+      display:inline-block;
+      font-weight:700;
+      color:var(--brand);
+      background:#eaf3fb;
+      border:1px solid #d9e8f3;
+      padding:8px 14px;
+      border-radius:999px;
+      box-shadow: 0 6px 16px var(--ring);
+      margin-bottom:18px;
+    }
+    .hero h2{
+      font-family:Poppins, Inter, sans-serif;
+      font-size: clamp(1.6rem, 2.4vw + 1rem, 2.2rem);
+      margin:10px auto 12px;
+      max-width: 900px;
+      color:#123146;
+      line-height:1.35;
+    }
+    .hero p{
+      color:var(--muted);
+      max-width: 820px;
+      margin: 0 auto 24px;
+      font-size: 1.05rem;
+    }
+    .cta{
+      display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+    }
+    .btn{
+      border:none; cursor:pointer; font-weight:700; letter-spacing:.2px;
+      padding:12px 18px; border-radius:12px; transition:.2s ease; box-shadow: var(--shadow);
+    }
+    .btn-primary{ background:var(--brand); color:#fff; }
+    .btn-primary:hover{ transform: translateY(-1px); }
+    .btn-ghost{ background:#fff; color:var(--brand); border:1px solid #d9e8f3; }
+    .btn-ghost:hover{ background:#f8fbff; transform: translateY(-1px); }
 
-    section { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
-    section h2 { text-align: center; font-family: 'Montserrat', sans-serif; color: #0A3D62; margin-bottom: 2rem; }
+    /* ---------- Sections ---------- */
+    section{ padding: 64px 18px; }
+    section h3{
+      text-align:center; font-family:Poppins, Inter, sans-serif; color:var(--brand);
+      margin: 0 auto 28px; font-size: clamp(1.4rem, 1.2vw + 1rem, 1.9rem);
+    }
 
-    .about, .services, .contact { background: #f5f6fa; border-radius: 10px; padding: 2rem; margin-bottom: 2rem; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .service { background: #fff; padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid #ddd; }
-    .service h3 { color: #0A3D62; margin-bottom: 1rem; }
+    /* ---------- About ---------- */
+    .about-card{
+      background:var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      border:1px solid #e8eef5;
+      padding:28px;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
 
-    .contact form { display: grid; gap: 1rem; }
-    .contact input, .contact textarea { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px; }
-    .contact button { background: #0A3D62; color: #fff; border: none; padding: 0.8rem; border-radius: 5px; cursor: pointer; }
-    .contact button:hover { background: #062b46; }
+    /* ---------- Services ---------- */
+    .grid{
+      display:grid; gap:18px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      max-width:1100px; margin:0 auto;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid #e8eef5;
+      border-radius: var(--radius);
+      padding:22px;
+      box-shadow: var(--shadow);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{ transform: translateY(-4px); box-shadow: 0 18px 35px rgba(10,61,98,0.18), 0 6px 12px rgba(0,0,0,0.05); }
+    .card h4{ margin:10px 0 8px; color:#123146; font-family:Poppins, Inter, sans-serif; }
+    .card p{ color:var(--muted); margin:0 }
+    .icon{
+      width:38px; height:38px; border-radius:10px;
+      display:grid; place-items:center; background:#eaf3fb; border:1px solid #d9e8f3;
+    }
 
-    footer { background: #0A3D62; color: #fff; text-align: center; padding: 1.5rem; }
-    footer p { margin: 0.5rem 0; }
+    /* ---------- Contact ---------- */
+    .contact-wrap{
+      max-width: 900px; margin: 0 auto;
+      display:grid; gap:18px; grid-template-columns: 1fr;
+    }
+    form{
+      background:var(--card); border:1px solid #e8eef5; border-radius: var(--radius-lg);
+      padding: 24px; box-shadow: var(--shadow);
+    }
+    input, textarea{
+      width:100%; padding:12px 14px; border:1px solid #d6dde7; border-radius:12px;
+      font-family: inherit; font-size: 1rem; outline:none;
+    }
+    textarea{ resize: vertical }
+    .form-row{ display:grid; gap:12px; grid-template-columns: 1fr 1fr; }
+    .form-row > * { min-width:0 }
+    .submit{ margin-top:10px }
 
-    @media(max-width: 768px) {
-      header { flex-direction: column; align-items: center; gap: 0.5rem; }
-      nav { margin-top: 0.5rem; }
+    /* ---------- Footer ---------- */
+    footer{
+      background:#0C2F49; color:#cfe0ef; text-align:center; padding: 26px 18px;
+    }
+    footer .foot-brand{ font-weight:700; color:#fff }
+    footer p{ margin: 6px 0 }
+
+    /* ---------- Responsive tweaks ---------- */
+    @media (max-width: 720px){
+      .brand img{ height: 88px }
+      .form-row{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    <a href="index.html" class="brand">
+    <a class="brand" href="index.html" aria-label="JR Research & Consulting Solutions Home">
       <img src="assets/logo.png" alt="JR Research & Consulting Solutions logo" />
       <h1>JR Research & Consulting Solutions</h1>
     </a>
-    <nav>
+    <nav aria-label="Primary Navigation">
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <h2>Trusted Partner for Academia, Research & Innovations</h2>
-    <p>Supporting institutions, researchers, and innovators worldwide.</p>
-    <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
-    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in Touch</button>
-  </section>
-
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>JR Research & Consulting Solutions is dedicated to empowering academia and research communities. With expertise in organizing national & international conferences, conducting Faculty Development Programs (FDPs), and providing consultancy for research proposals, we aim to be the trusted partner in academic excellence and innovation.</p>
-  </section>
-
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="service">
-        <h3>Conference & FDP Organization</h3>
-        <p>Plan, organize, and execute impactful academic events.</p>
-      </div>
-      <div class="service">
-        <h3>Project Proposal Consultancy</h3>
-        <p>Expert guidance in drafting and submitting competitive research proposals.</p>
-      </div>
-      <div class="service">
-        <h3>Research & Academic Collaborations</h3>
-        <p>Connecting institutions and researchers for global knowledge exchange.</p>
-      </div>
-      <div class="service">
-        <h3>Workshops & Training</h3>
-        <p>Hands-on training sessions tailored for faculty and researchers.</p>
+    <div class="container">
+      <span class="tagline">Trusted Partner for Academia, Research & Innovations</span>
+      <h2>We help institutions and researchers plan conferences, run FDPs, and craft competitive research proposals.</h2>
+      <p>From concept to execution, we support your academic initiatives with professional program design, logistics, and documentation — so you can focus on outcomes and impact.</p>
+      <div class="cta">
+        <button class="btn btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in Touch</button>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <!-- About -->
+  <section id="about">
+    <h3>About Us</h3>
+    <div class="about-card">
+      JR Research & Consulting Solutions empowers academia and research communities. We organize national & international conferences, deliver Faculty Development Programs (FDPs), and provide end-to-end consultancy for research proposals and collaborations.
+    </div>
   </section>
 
+  <!-- Services -->
+  <section id="services">
+    <h3>Our Services</h3>
+    <div class="grid">
+      <div class="card">
+        <div class="icon" aria-hidden="true">📅</div>
+        <h4>Conference & FDP Organization</h4>
+        <p>Plan, structure, and execute impactful academic events with professional end-to-end support.</p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true">📝</div>
+        <h4>Project Proposal Consultancy</h4>
+        <p>Guidance on problem framing, methodology, budgets, and compliance to maximize success.</p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true">🤝</div>
+        <h4>Research & Academic Collaborations</h4>
+        <p>Connect institutions and researchers for meaningful, outcome-driven partnerships.</p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true">🎯</div>
+        <h4>Workshops & Training</h4>
+        <p>Tailored hands-on sessions for faculty and researchers across domains.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h3>Contact Us</h3>
+    <div class="contact-wrap">
+      <form onsubmit="event.preventDefault(); alert('Thank you! We will reach out shortly.');">
+        <div class="form-row">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+        </div>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <div class="submit">
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 JR Research & Consulting Solutions</p>
+    <p class="foot-brand">© 2025 JR Research & Consulting Solutions</p>
     <p>Trusted Partner for Academia, Research & Innovations</p>
   </footer>
 
