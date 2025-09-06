@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JR Research & Consulting Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <meta name="description" content="JR Research & Consulting Solutions — trusted partner for academic events, funding proposals, research solutions and strategic collaborations.">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
   <style>
     :root{
       --bg:#f6faf8; --ink:#11181c; --muted:#5a6a64;
@@ -20,25 +22,24 @@
     .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 
     /* Header */
-    .site-header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(255,255,255,.6));border-bottom:1px solid rgba(0,0,0,.06)}
+    .site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid rgba(0,0,0,.06);box-shadow:0 2px 4px rgba(0,0,0,.04)}
     .navbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
     .brand img{height:64px;width:auto;display:block}
     .brand-label{display:flex;flex-direction:column;align-items:center}
-    .brand-name{font-weight:800;letter-spacing:.2px;font-size:1.2rem;color:var(--brand);line-height:1.1}
-    .brand-tagline{font-size:.9rem;color:#3b544c;opacity:.95;margin-top:4px;text-align:center}
+    .brand-name{font-weight:800;font-size:1.2rem;color:var(--brand);line-height:1.2}
+    .brand-tagline{font-size:.9rem;color:#3b544c;opacity:.9;margin-top:2px;text-align:center}
     nav.primary{display:flex;gap:22px;align-items:center}
     nav.primary a{font-weight:600;color:#2b3a35;padding:8px 10px;border-radius:10px}
     nav.primary a:hover{background:#eaf4ef}
 
     /* Hero */
-    .hero{position:relative;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:84px 0 72px;overflow:hidden}
-    .hero-inner{text-align:center}
-    .tag{display:inline-block;font-weight:800;letter-spacing:.3px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:8px 14px;border-radius:999px;margin-bottom:14px}
-    .hero h1{font-size:clamp(1.9rem,2.2vw + 1.2rem,2.6rem);line-height:1.2;margin:10px auto;max-width:1000px;font-weight:800}
-    .hero p{color:#e8f6f1;max-width:860px;margin:12px auto 24px;font-size:1.03rem}
+    .hero{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:84px 0 72px;text-align:center}
+    .tag{display:inline-block;font-weight:800;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);padding:8px 14px;border-radius:999px;margin-bottom:14px}
+    .hero h1{font-size:clamp(1.9rem,2.2vw + 1.2rem,3rem);line-height:1.2;margin:10px auto;max-width:1000px;font-weight:800}
+    .hero p{color:#e8f6f1;max-width:860px;margin:12px auto 24px;font-size:1.06rem}
     .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{border:none;cursor:pointer;font-weight:800;letter-spacing:.2px;padding:13px 18px;border-radius:14px;transition:.18s ease;box-shadow:var(--shadow)}
+    .btn{border:none;cursor:pointer;font-weight:800;padding:13px 18px;border-radius:14px;transition:.18s ease;box-shadow:var(--shadow)}
     .btn-primary{background:#fff;color:var(--brand)} .btn-primary:hover{transform:translateY(-2px)}
     .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.35)} .btn-ghost:hover{background:rgba(255,255,255,.14)}
 
@@ -48,13 +49,12 @@
 
     /* About */
     .about{display:grid;gap:24px;grid-template-columns:1.15fr 1fr;align-items:center}
-    .about-card{background:var(--card);border:1px solid #e3eee9;border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow);color:#31433c;font-size:1.06rem}
+    .about-card{background:var(--card);border:1px solid #e3eee9;border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow);font-size:1.06rem}
     .about-visual{min-height:260px;border-radius:var(--radius-lg);background:linear-gradient(135deg,#eaf6f2,#ffffff);border:1px solid #e3eee9;box-shadow:var(--shadow);display:grid;place-items:center;text-align:center;padding:24px;color:#3a4b45}
 
     /* Services */
     .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .card{background:linear-gradient(180deg,#ffffff,#f8fcfa);border:1px solid #e3eee9;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:transform .16s ease, box-shadow .16s ease}
-    .card:hover{transform:translateY(-4px);box-shadow:0 20px 38px rgba(11,59,46,.18),0 8px 14px rgba(0,0,0,.05)}
+    .card{background:#fff;border:1px solid #e3eee9;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     .icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#e6faf3;border:1px solid #d6efe6;color:var(--brand);font-size:20px;font-weight:800}
     .card h3{margin:12px 0 8px;color:#183b32;font-size:1.15rem}
     .card p{color:var(--muted);margin:0 0 10px}
@@ -65,11 +65,11 @@
     .contact{display:grid;gap:22px;grid-template-columns:1fr 1fr}
     form{background:var(--card);border:1px solid #e3eee9;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
     label{display:block;font-weight:600;margin:10px 0 6px}
-    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #cfe2da;font-family:inherit;font-size:1rem;outline:none;background:#fff}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #cfe2da;font-size:1rem;background:#fff}
     textarea{resize:vertical;min-height:110px}
     .submit{margin-top:12px}
     .btn-accent{background:var(--accent);color:#fff} .btn-accent:hover{filter:brightness(.95);transform:translateY(-2px)}
-    .contact-info{background:linear-gradient(180deg,#ffffff,#f8fcfa);border:1px solid #e3eee9;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
+    .contact-info{background:#fff;border:1px solid #e3eee9;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
     .info-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
     .dot{width:10px;height:10px;border-radius:999px;background:var(--brand);margin-top:9px}
 
@@ -91,18 +91,17 @@
   <!-- Header -->
   <header class="site-header">
     <div class="wrap navbar">
-      <a class="brand" href="index.html" aria-label="JR Research & Consulting Solutions Home">
+      <a class="brand" href="index.html">
         <img src="assets/logo.png" alt="JR Research & Consulting Solutions logo" />
         <span class="brand-label">
           <span class="brand-name">JR Research & Consulting Solutions</span>
           <span class="brand-tagline">Trusted Partner for Academia, Research & Innovations</span>
         </span>
       </a>
-      <nav class="primary" aria-label="Primary">
+      <nav class="primary">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-        <!-- Request a Call removed per your instruction -->
       </nav>
     </div>
   </header>
@@ -112,7 +111,7 @@
     <div class="wrap hero-inner">
       <span class="tag">Academic Events • Funding Proposals • Research Solutions • Strategic Collaborations</span>
       <h1>End-to-End Support for Conferences, FDPs, High-Impact Research Proposals, Research Solutions, and Impactful Collaborations</h1>
-      <p>From technical program design and peer-review management to funding strategies and MoUs, we deliver structured, end-to-end support that ensures measurable outcomes.</p>
+      <p>From technical program design and peer-review workflows to proposal strategies and MoUs, we deliver structured, end-to-end support that ensures measurable outcomes.</p>
       <div class="cta-row">
         <button class="btn btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
         <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Talk to US</button>
@@ -131,7 +130,9 @@
         <div>
           <strong style="font-size:1.1rem;color:#0b3b2e;">Focus Areas</strong>
           <p style="margin:.6rem 0 0">
-            Conference & FDP Operations • Proposal Strategy • Collaboration Design • Research Solutions in AI & ML, Nanomaterials, Nanocoatings, and Thin Films • Indigenous Design and Development of Equipment for R&D
+            Conference & FDP Operations • Proposal Strategy • Collaboration Design •
+            Research Solutions in AI & ML, Nanomaterials, Nanocoatings, Thin Films •
+            Indigenous Design and Development of Equipment for R&D
           </p>
         </div>
       </div>
@@ -148,23 +149,21 @@
           <h3>Conference & FDP Management</h3>
           <p>Seamless, standards-driven events from concept note to post-event report.</p>
           <ul class="list">
-            <li>Technical program and peer-review management</li>
+            <li>Technical program & review workflows</li>
             <li>Website, registrations, certificates, proceedings</li>
             <li>Budgeting, vendor coordination, compliance</li>
           </ul>
         </div>
-
         <div class="card">
           <div class="icon">📝</div>
           <h3>Funding Proposal Strategy</h3>
-          <p>Stronger submissions for DST, SERB, DBT, ICSSR, and international funding calls.</p>
+          <p>Stronger submissions for DST, SERB, DBT, ICSSR and international calls.</p>
           <ul class="list">
-            <li>Problem framing, methodology, and work plans</li>
-            <li>Budget narratives, risk registers, Gantt charts, and KPIs</li>
-            <li>Formatting to agency checklists and portal requirements</li>
+            <li>Problem framing, methodology & work-plans</li>
+            <li>Budget narratives, risk registers, Gantt & KPIs</li>
+            <li>Formatting to agency checklists & portals</li>
           </ul>
         </div>
-
         <div class="card">
           <div class="icon">🤝</div>
           <h3>Research Collaborations</h3>
@@ -175,14 +174,13 @@
             <li>Defined milestones, deliverables, and reporting mechanisms</li>
           </ul>
         </div>
-
         <div class="card">
           <div class="icon">🎯</div>
           <h3>Workshops & Training</h3>
           <p>Focused capacity-building programs for faculty, researchers, and R&D professionals.</p>
           <ul class="list">
-            <li>AI/ML, Quantum Technologies, Nanomaterials, and allied domains</li>
-            <li>Proposal writing and research communication</li>
+            <li>AI/ML, Quantum Technologies, Nanomaterials, other domains in Science & Engineering</li>
+            <li>Proposal Writing and Research Communication</li>
             <li>Hands-on sessions with practical templates and toolkits</li>
             <li>Structured assessments, feedback, and certification</li>
           </ul>
@@ -192,40 +190,36 @@
   </section>
 
   <!-- Contact -->
- <section id="contact">
-  <div class="wrap">
-    <h2>Contact Us</h2>
-    <div class="contact">
-      <!-- Contact Form -->
-      <form action="https://formspree.io/f/xyzdlgkz" method="POST">
-        <!-- Redirect back to your site after submit -->
-        <input type="hidden" name="_next" value="https://jrrcsolutions.in/thank-you.html">
-        
-        <label for="name">Your Name</label>
-        <input id="name" type="text" name="name" placeholder="Enter your name" required />
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact Us</h2>
+      <div class="contact">
+        <form action="https://formspree.io/f/xyzdlgkz" method="POST">
+          <input type="hidden" name="_next" value="https://jrrcsolutions.in/thank-you.html">
+          
+          <label for="name">Your Name</label>
+          <input id="name" type="text" name="name" placeholder="Enter your name" required />
 
-        <label for="email">Your Email</label>
-        <input id="email" type="email" name="email" placeholder="you@example.com" required />
+          <label for="email">Your Email</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com" required />
 
-        <label for="msg">How can we help?</label>
-        <textarea id="msg" name="message" placeholder="Tell us about your event, proposal, or collaboration needs."></textarea>
+          <label for="msg">How can we help?</label>
+          <textarea id="msg" name="message" placeholder="Tell us about your event, proposal, or collaboration needs."></textarea>
 
-        <div class="submit">
-          <button class="btn btn-accent" type="submit">Send Message</button>
+          <div class="submit">
+            <button class="btn btn-accent" type="submit">Send Message</button>
+          </div>
+        </form>
+
+        <div class="contact-info">
+          <div class="info-row"><span class="dot"></span><div><strong>Typical response:</strong> within 24 hours</div></div>
+          <div class="info-row"><span class="dot"></span><div><strong>Email:</strong> jrrcsolutions@gmail.com</div></div>
+          <div class="info-row"><span class="dot"></span><div><strong>Service region:</strong> India & International (virtual / on-site)</div></div>
+          <div class="info-row"><span class="dot"></span><div><strong>Office hours:</strong> Mon–Sat, 10:00–18:00 IST</div></div>
         </div>
-      </form>
-
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <div class="info-row"><span class="dot"></span><div><strong>Typical response:</strong> within 24 hours</div></div>
-        <div class="info-row"><span class="dot"></span><div><strong>Email:</strong> jrrcsolutions@gmail.com</div></div>
-        <div class="info-row"><span class="dot"></span><div><strong>Service region:</strong> India & International (virtual / on-site)</div></div>
-        <div class="info-row"><span class="dot"></span><div><strong>Office hours:</strong> Mon–Sat, 10:00–18:00 IST</div></div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -237,5 +231,3 @@
 
 </body>
 </html>
-
-
