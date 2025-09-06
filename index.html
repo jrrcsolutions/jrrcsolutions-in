@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>JR Research & Consulting Solutions</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta name="description" content="JR Research & Consulting Solutions — trusted partner for academic events, funding proposals, research solutions and strategic collaborations.">
   <style>
     :root{
       --bg:#f6faf8; --ink:#11181c; --muted:#5a6a64;
       --brand:#0b3b2e; --brand-2:#127b64; --accent:#ff7a59;
-      --card:#fff; --ring:rgba(0,0,0,.06);
-      --shadow:0 10px 30px rgba(11,59,46,.12), 0 2px 10px rgba(0,0,0,.04);
+      --card:#fff; --shadow:0 10px 30px rgba(11,59,46,.12), 0 2px 10px rgba(0,0,0,.04);
       --radius:16px; --radius-lg:22px;
     }
     *{box-sizing:border-box} html{scroll-behavior:smooth}
@@ -23,18 +20,13 @@
     .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 
     /* Header */
-    .site-header{
-      position:sticky;top:0;z-index:50;
-      backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(255,255,255,.6));
-      border-bottom:1px solid rgba(0,0,0,.06)
-    }
+    .site-header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(255,255,255,.6));border-bottom:1px solid rgba(0,0,0,.06)}
     .navbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{height:64px;width:auto;display:block}
     .brand-label{display:flex;flex-direction:column;align-items:center}
-    .brand-name{font-weight:800;letter-spacing:.2px;font-size:1.2rem;color:var(--brand);line-height:1.2}
-    .brand-tagline{font-size:.9rem;color:#3b544c;opacity:.9;margin-top:2px;text-align:center}
+    .brand-name{font-weight:800;letter-spacing:.2px;font-size:1.2rem;color:var(--brand);line-height:1.1}
+    .brand-tagline{font-size:.9rem;color:#3b544c;opacity:.95;margin-top:4px;text-align:center}
     nav.primary{display:flex;gap:22px;align-items:center}
     nav.primary a{font-weight:600;color:#2b3a35;padding:8px 10px;border-radius:10px}
     nav.primary a:hover{background:#eaf4ef}
@@ -42,9 +34,9 @@
     /* Hero */
     .hero{position:relative;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:84px 0 72px;overflow:hidden}
     .hero-inner{text-align:center}
-    .tag{display:inline-block;font-weight:800;letter-spacing:.3px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);padding:8px 14px;border-radius:999px;margin-bottom:14px}
-    .hero h1{font-size:clamp(1.9rem,2.2vw + 1.2rem,3rem);line-height:1.2;margin:10px auto;max-width:1000px;font-weight:800}
-    .hero p{color:#e8f6f1;max-width:860px;margin:12px auto 24px;font-size:1.06rem}
+    .tag{display:inline-block;font-weight:800;letter-spacing:.3px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:8px 14px;border-radius:999px;margin-bottom:14px}
+    .hero h1{font-size:clamp(1.9rem,2.2vw + 1.2rem,2.6rem);line-height:1.2;margin:10px auto;max-width:1000px;font-weight:800}
+    .hero p{color:#e8f6f1;max-width:860px;margin:12px auto 24px;font-size:1.03rem}
     .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn{border:none;cursor:pointer;font-weight:800;letter-spacing:.2px;padding:13px 18px;border-radius:14px;transition:.18s ease;box-shadow:var(--shadow)}
     .btn-primary{background:#fff;color:var(--brand)} .btn-primary:hover{transform:translateY(-2px)}
@@ -110,7 +102,7 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-        <!-- Removed: Request a Call -->
+        <!-- Request a Call removed per your instruction -->
       </nav>
     </div>
   </header>
@@ -118,9 +110,9 @@
   <!-- Hero -->
   <section class="hero">
     <div class="wrap hero-inner">
-      <span class="tag">Academic Events • Funding Proposals • Research Partnerships</span>
-      <h1>End-to-end support for conferences, FDPs, drafting of high-impact research proposals, research solutions, and build impactful collaborations</h1>
-      <p>From technical program design and peer-review workflows to proposal strategy and MoUs, we provide structured, end-to-end support that delivers measurable outcomes.</p>
+      <span class="tag">Academic Events • Funding Proposals • Research Solutions • Strategic Collaborations</span>
+      <h1>End-to-End Support for Conferences, FDPs, High-Impact Research Proposals, Research Solutions, and Impactful Collaborations</h1>
+      <p>From technical program design and peer-review management to funding strategies and MoUs, we deliver structured, end-to-end support that ensures measurable outcomes.</p>
       <div class="cta-row">
         <button class="btn btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
         <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Talk to US</button>
@@ -133,15 +125,13 @@
     <div class="wrap about">
       <div class="about-card">
         <h2>About JR Research & Consulting Solutions</h2>
-        We partner with departments, research centers, and faculty to plan rigorous academic programs, strengthen funding proposals, and formalize collaborations. Our approach combines academic rigor with operational clarity so your team can focus on scholarship and impact.
+        We collaborate with universities, research centers, and faculty to design and deliver high-quality academic programs, develop competitive funding proposals, and establish sustainable collaborations. Our approach blends academic rigor with operational efficiency, enabling your team to focus on research, innovation, and measurable impact.
       </div>
       <div class="about-visual">
         <div>
           <strong style="font-size:1.1rem;color:#0b3b2e;">Focus Areas</strong>
           <p style="margin:.6rem 0 0">
-            Conference/FDP operations • Proposal strategy • Collaboration design •
-            Research solutions related to AI & ML, Nanomaterials, Nanocoatings, Thin Film Deposition •
-            Indigenous design of synthesis and fabrication of equipment/set-ups related to preparation of nanomaterials
+            Conference & FDP Operations • Proposal Strategy • Collaboration Design • Research Solutions in AI & ML, Nanomaterials, Nanocoatings, and Thin Films • Indigenous Design and Development of Equipment for R&D
           </p>
         </div>
       </div>
@@ -158,39 +148,43 @@
           <h3>Conference & FDP Management</h3>
           <p>Seamless, standards-driven events from concept note to post-event report.</p>
           <ul class="list">
-            <li>Technical program & review workflows</li>
+            <li>Technical program and peer-review management</li>
             <li>Website, registrations, certificates, proceedings</li>
             <li>Budgeting, vendor coordination, compliance</li>
           </ul>
         </div>
+
         <div class="card">
           <div class="icon">📝</div>
           <h3>Funding Proposal Strategy</h3>
-          <p>Stronger submissions for DST, SERB, DBT, ICSSR and international calls.</p>
+          <p>Stronger submissions for DST, SERB, DBT, ICSSR, and international funding calls.</p>
           <ul class="list">
-            <li>Problem framing, methodology & work-plans</li>
-            <li>Budget narratives, risk registers, Gantt & KPIs</li>
-            <li>Formatting to agency checklists & portals</li>
+            <li>Problem framing, methodology, and work plans</li>
+            <li>Budget narratives, risk registers, Gantt charts, and KPIs</li>
+            <li>Formatting to agency checklists and portal requirements</li>
           </ul>
         </div>
+
         <div class="card">
           <div class="icon">🤝</div>
           <h3>Research Collaborations</h3>
-          <p>Partnerships that produce measurable outcomes.</p>
+          <p>Partnerships designed to deliver measurable outcomes.</p>
           <ul class="list">
-            <li>MoUs, joint labs, visiting programs</li>
-            <li>IP & authorship ground rules</li>
-            <li>Milestones, deliverables, and reporting</li>
+            <li>MoUs, joint research labs, and visiting faculty programs</li>
+            <li>Clear IP and authorship frameworks</li>
+            <li>Defined milestones, deliverables, and reporting mechanisms</li>
           </ul>
         </div>
+
         <div class="card">
           <div class="icon">🎯</div>
           <h3>Workshops & Training</h3>
-          <p>Targeted upskilling for faculty, scholars, and R&D staff.</p>
+          <p>Focused capacity-building programs for faculty, researchers, and R&D professionals.</p>
           <ul class="list">
-            <li>AI/ML, Quantum Tech, Nano-materials, Proposal writing</li>
-            <li>Hands-on formats with take-home templates</li>
-            <li>Assessment, feedback, and certificates</li>
+            <li>AI/ML, Quantum Technologies, Nanomaterials, and allied domains</li>
+            <li>Proposal writing and research communication</li>
+            <li>Hands-on sessions with practical templates and toolkits</li>
+            <li>Structured assessments, feedback, and certification</li>
           </ul>
         </div>
       </div>
@@ -204,9 +198,9 @@
       <div class="contact">
         <form onsubmit="event.preventDefault(); alert('Thank you! We will reach out within 24 hours.');">
           <label for="name">Your Name</label>
-          <input id="name" type="text" placeholder="Enter your name" required />
+          <input id="name" type="text" placeholder="Enter your name" required>
           <label for="email">Your Email</label>
-          <input id="email" type="email" placeholder="you@example.com" required />
+          <input id="email" type="email" placeholder="you@example.com" required>
           <label for="msg">How can we help?</label>
           <textarea id="msg" placeholder="Tell us about your event, proposal, or collaboration needs."></textarea>
           <div class="submit">
@@ -216,7 +210,7 @@
 
         <div class="contact-info">
           <div class="info-row"><span class="dot"></span><div><strong>Typical response:</strong> within 24 hours</div></div>
-          <div class="info-row"><span class="dot"></span><div><strong>Email:</strong> info@jrrcsolutions.in</div></div>
+          <div class="info-row"><span class="dot"></span><div><strong>Email:</strong> jrrcsolutions@gmail.com</div></div>
           <div class="info-row"><span class="dot"></span><div><strong>Service region:</strong> India & International (virtual / on-site)</div></div>
           <div class="info-row"><span class="dot"></span><div><strong>Office hours:</strong> Mon–Sat, 10:00–18:00 IST</div></div>
         </div>
