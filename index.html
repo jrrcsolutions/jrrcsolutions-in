@@ -63,15 +63,26 @@
 
     /* Contact */
     .contact{display:grid;gap:22px;grid-template-columns:1fr 1fr}
-    form{background:var(--card);border:1px solid #e3eee9;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
-    label{display:block;font-weight:600;margin:10px 0 6px}
-    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #cfe2da;font-size:1rem;background:#fff}
-    textarea{resize:vertical;min-height:110px}
+    .contact .form-card{background:var(--card);border:1px solid #e3eee9;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
+    .contact .form-card label{display:block;font-weight:600;margin:10px 0 6px}
+    .contact .form-card input,.contact .form-card textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #cfe2da;font-size:1rem;background:#fff}
+    .contact .form-card textarea{resize:vertical;min-height:110px}
     .submit{margin-top:12px}
     .btn-accent{background:var(--accent);color:#fff} .btn-accent:hover{filter:brightness(.95);transform:translateY(-2px)}
     .contact-info{background:#fff;border:1px solid #e3eee9;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
     .info-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
     .dot{width:10px;height:10px;border-radius:999px;background:var(--brand);margin-top:9px}
+
+    /* Status box */
+    #formStatus{
+      display:none;
+      padding:12px 14px;
+      border-radius:10px;
+      margin-top:12px;
+      font-weight:700;
+    }
+    #formStatus.success{ background:#e6faf3; color:#0b3b2e; border:1px solid #cfeee2; display:block; }
+    #formStatus.error{ background:#fff0f0; color:#7a1f1f; border:1px solid #f5c6c6; display:block; }
 
     /* Footer */
     footer{background:#0a2a22;color:#cfe6de;text-align:center;padding:28px 20px;margin-top:50px}
@@ -194,23 +205,26 @@
     <div class="wrap">
       <h2>Contact Us</h2>
       <div class="contact">
-        <form action="https://formspree.io/f/xyzdlgkz" method="POST">
-   <input type="hidden" name="_next" value="https://jrrcsolutions.in/thank-you.html">
+        <div class="form-card">
+          <form id="contactForm">
+            <!-- Formspree endpoint: replace only if you want another target -->
+            <!-- Current endpoint: https://formspree.io/f/xyzdlgkz -->
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your name" required />
 
-  <label for="name">Your Name</label>
-  <input id="name" name="name" type="text" placeholder="Enter your name" required />
+            <label for="email">Your Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
 
-  <label for="email">Your Email</label>
-  <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" placeholder="Tell us about your event, proposal, or collaboration needs."></textarea>
 
-  <label for="message">How can we help?</label>
-  <textarea id="message" name="message" placeholder="Tell us about your event, proposal, or collaboration needs."></textarea>
+            <div class="submit">
+              <button class="btn btn-accent" type="submit">Send Message</button>
+            </div>
 
-  <div class="submit">
-    <button class="btn btn-accent" type="submit">Send Message</button>
-  </div>
-</form>
-
+            <div id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
 
         <div class="contact-info">
           <div class="info-row"><span class="dot"></span><div><strong>Typical response:</strong> within 24 hours</div></div>
@@ -230,6 +244,56 @@
     </div>
   </footer>
 
+  <!-- AJAX form submission (Option 2) -->
+  <script>
+    (function(){
+      // Replace with your Formspree endpoint if different.
+      const FORM_ENDPOINT = 'https://formspree.io/f/xyzdlgkz';
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+
+      function showStatus(message, type='success') {
+        status.className = '';
+        if (type === 'success') {
+          status.classList.add('success');
+          status.textContent = message;
+        } else {
+          status.classList.add('error');
+          status.textContent = message;
+        }
+        // ensure visible
+        status.style.display = 'block';
+      }
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        showStatus('Sending…', 'success');
+
+        const data = new FormData(form);
+
+        try {
+          const res = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (res.ok) {
+            showStatus('Thank you — your message has been sent. We will respond within 24 hours.', 'success');
+            form.reset();
+            // Optional: redirect to thank-you page after short delay
+            // setTimeout(()=> window.location.href = '/thank-you.html', 1500);
+          } else {
+            const json = await res.json();
+            const err = (json && json.error) ? json.error : 'Submission failed — please try again later.';
+            showStatus(err, 'error');
+          }
+        } catch (err) {
+          showStatus('Network error — please check your connection and try again.', 'error');
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
-
