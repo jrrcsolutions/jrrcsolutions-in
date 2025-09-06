@@ -193,30 +193,35 @@
 
   <!-- Contact -->
   <section id="contact">
-    <div class="wrap">
-      <h2>Contact Us</h2>
-      <div class="contact">
-        <form onsubmit="event.preventDefault(); alert('Thank you! We will reach out within 24 hours.');">
-          <label for="name">Your Name</label>
-          <input id="name" type="text" placeholder="Enter your name" required>
-          <label for="email">Your Email</label>
-          <input id="email" type="email" placeholder="you@example.com" required>
-          <label for="msg">How can we help?</label>
-          <textarea id="msg" placeholder="Tell us about your event, proposal, or collaboration needs."></textarea>
-          <div class="submit">
-            <button class="btn btn-accent" type="submit">Send Message</button>
-          </div>
-        </form>
+  <div class="wrap">
+    <h2>Contact Us</h2>
+    <div class="contact">
+      <!-- Contact Form -->
+      <form action="https://formspree.io/f/xyzdlgkz" method="POST">
+        <label for="name">Your Name</label>
+        <input id="name" type="text" name="name" placeholder="Enter your name" required />
 
-        <div class="contact-info">
-          <div class="info-row"><span class="dot"></span><div><strong>Typical response:</strong> within 24 hours</div></div>
-          <div class="info-row"><span class="dot"></span><div><strong>Email:</strong> jrrcsolutions@gmail.com</div></div>
-          <div class="info-row"><span class="dot"></span><div><strong>Service region:</strong> India & International (virtual / on-site)</div></div>
-          <div class="info-row"><span class="dot"></span><div><strong>Office hours:</strong> Mon–Sat, 10:00–18:00 IST</div></div>
+        <label for="email">Your Email</label>
+        <input id="email" type="email" name="email" placeholder="you@example.com" required />
+
+        <label for="msg">How can we help?</label>
+        <textarea id="msg" name="message" placeholder="Tell us about your event, proposal, or collaboration needs."></textarea>
+
+        <div class="submit">
+          <button class="btn btn-accent" type="submit">Send Message</button>
         </div>
+      </form>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div class="info-row"><span class="dot"></span><div><strong>Typical response:</strong> within 24 hours</div></div>
+        <div class="info-row"><span class="dot"></span><div><strong>Email:</strong> jrrcsolutions@gmail.com</div></div>
+        <div class="info-row"><span class="dot"></span><div><strong>Service region:</strong> India & International (virtual / on-site)</div></div>
+        <div class="info-row"><span class="dot"></span><div><strong>Office hours:</strong> Mon–Sat, 10:00–18:00 IST</div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
@@ -228,3 +233,4 @@
 
 </body>
 </html>
+
