@@ -49,28 +49,80 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
 
-  <!-- Add your CSS link here -->
-  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    /* --- keep your CSS here (you had "your CSS unchanged …") --- */
+    /* Example minimal safe CSS so the page visibly renders while debugging: */
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;margin:0;padding:2rem;background:#fff;color:#111}
+    header{display:flex;align-items:center;gap:12px}
+    img.logo{height:56px}
+    main{max-width:980px;margin-top:1rem}
+  </style>
 </head>
 <body>
-  <!-- Your real page content goes here -->
   <header>
-    <img src="/assets/logo.png" alt="JR Research & Consulting Solutions Logo" style="height:60px;">
-    <h1>JR Research & Consulting Solutions</h1>
-    <p>Trusted Partner for Academia, Research & Innovations</p>
+    <img src="/assets/logo.png" alt="JR Research & Consulting Solutions" class="logo" onerror="this.style.display='none'">
+    <div>
+      <h1>JR Research & Consulting Solutions</h1>
+      <p>Trusted Partner for Academia, Research & Innovations</p>
+    </div>
   </header>
 
   <main>
+    <!-- Put a minimal visible fallback content so users see something while debugging -->
     <section id="hero">
       <h2>Welcome</h2>
-      <p>This is your original site content. Replace this text with your actual homepage sections.</p>
+      <p>If you can see this text, GitHub Pages is serving your site correctly. Interactive features load only on allowed domains.</p>
     </section>
+
+    <!-- your original HTML content can follow here (restore replaced parts later) -->
   </main>
 
-  <!-- Your original scripts -->
-  <script src="/assets/content.js"></script>
-  <script src="/assets/read.js"></script>
-  <script src="/assets/general.js"></script>
-  <script src="/assets/selection.3fa02834.js"></script>
+  <!-- ===== Conditional script loader =====
+       This avoids executing vendor / insights scripts unless host is allowed.
+       Add or remove filenames in `siteScripts` as required.
+  -->
+  <script>
+    (function(){
+      // ALLOWED_HOSTS: add any hostnames where you want full JS behavior
+      const ALLOWED_HOSTS = [
+        'jrrcsolutions.in',
+        'www.jrrcsolutions.in',
+        'localhost',
+        '127.0.0.1'
+      ];
+
+      const host = window.location.hostname;
+      const isAllowed = ALLOWED_HOSTS.includes(host);
+
+      // List the script filenames you normally include that were causing errors.
+      // Edit this list to match your actual asset names if different.
+      const siteScripts = [
+        '/assets/content.js',
+        '/assets/read.js',
+        '/assets/general.js',
+        '/assets/selection.3fa02834.js' // example - remove or replace if not present
+      ];
+
+      if (!isAllowed) {
+        console.warn('Host not in allowlist — skipping non-essential scripts for:', host);
+        // Optionally expose a global flag to let other scripts know:
+        window._JRCS_SKIP_INIT = true;
+        return;
+      }
+
+      // If host allowed, load each script dynamically and attach safe .catch wrappers where possible.
+      siteScripts.forEach(src => {
+        const s = document.createElement('script');
+        s.src = src;
+        s.defer = true;
+        s.onload = function(){ console.log('Loaded script', src); };
+        s.onerror = function(e){ console.warn('Failed to load', src, e); };
+        document.body.appendChild(s);
+      });
+    })();
+  </script>
+
+  <!-- End -->
 </body>
 </html>
+
