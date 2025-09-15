@@ -1,3 +1,7 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JR Research & Consulting Solutions</title>
 
@@ -47,9 +51,15 @@
 
 <style>
     :root{
-      --bg:#f6faf8; --ink:#11181c; --muted:#5a6a64;
-      --brand:#0b3b2e; --brand-2:#127b64; --accent:#ff7a59;
-      --card:#fff; --shadow:0 10px 30px rgba(11,59,46,.12), 0 2px 10px rgba(0,0,0,.04);
+      /* Blue / white / grey palette */
+      --bg: #f5f7fa;            /* very light neutral background */
+      --ink: #0f1720;           /* primary text (near-black) */
+      --muted: #6b7785;         /* muted copy color */
+      --brand: #0b3b6e;         /* deep navy (primary) */
+      --brand-2: #1277c8;       /* lighter blue (secondary gradient) */
+      --accent: #2fa4ff;        /* bright blue accent for small callouts */
+      --card: #ffffff;          /* card background */
+      --shadow: 0 10px 30px rgba(11,59,110,.08), 0 2px 10px rgba(0,0,0,.04);
       --radius:16px; --radius-lg:22px;
     }
     *{box-sizing:border-box} html{scroll-behavior:smooth}
@@ -64,20 +74,20 @@
     .brand img{height:64px;width:auto;display:block}
     .brand-label{display:flex;flex-direction:column;align-items:center}
     .brand-name{font-weight:800;font-size:1.2rem;color:var(--brand);line-height:1.2}
-    .brand-tagline{font-size:.9rem;color:#3b544c;opacity:.9;margin-top:2px;text-align:center}
+    .brand-tagline{font-size:.9rem;color:var(--muted);opacity:.95;margin-top:2px;text-align:center}
     nav.primary{display:flex;gap:22px;align-items:center}
-    nav.primary a{font-weight:600;color:#2b3a35;padding:8px 10px;border-radius:10px}
-    nav.primary a:hover{background:#eaf4ef}
+    nav.primary a{font-weight:600;color:var(--muted);padding:8px 10px;border-radius:10px}
+    nav.primary a:hover{background:rgba(18,119,200,0.06); color:var(--brand)}
 
     /* Hero */
     .hero{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:84px 0 72px;text-align:center}
-    .tag{display:inline-block;font-weight:800;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);padding:8px 14px;border-radius:999px;margin-bottom:14px}
+    .tag{display:inline-block;font-weight:800;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:8px 14px;border-radius:999px;margin-bottom:14px}
     .hero h1{font-size:clamp(1.9rem,2.2vw + 1.2rem,3rem);line-height:1.2;margin:10px auto;max-width:1000px;font-weight:800}
-    .hero p{color:#e8f6f1;max-width:860px;margin:12px auto 24px;font-size:1.06rem}
+    .hero p{color:rgba(255,255,255,0.92);max-width:860px;margin:12px auto 24px;font-size:1.06rem}
     .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn{border:none;cursor:pointer;font-weight:800;padding:13px 18px;border-radius:14px;transition:.18s ease;box-shadow:var(--shadow)}
     .btn-primary{background:#fff;color:var(--brand)} .btn-primary:hover{transform:translateY(-2px)}
-    .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.35)} .btn-ghost:hover{background:rgba(255,255,255,.14)}
+    .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.12)} .btn-ghost:hover{background:rgba(255,255,255,.14)}
 
     /* Sections */
     section{padding:70px 0}
@@ -85,27 +95,27 @@
 
     /* About */
     .about{display:grid;gap:24px;grid-template-columns:1.15fr 1fr;align-items:center}
-    .about-card{background:var(--card);border:1px solid #e3eee9;border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow);font-size:1.06rem}
-    .about-visual{min-height:260px;border-radius:var(--radius-lg);background:linear-gradient(135deg,#eaf6f2,#ffffff);border:1px solid #e3eee9;box-shadow:var(--shadow);display:grid;place-items:center;text-align:center;padding:24px;color:#3a4b45}
+    .about-card{background:var(--card);border:1px solid rgba(16,41,71,0.06);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow);font-size:1.06rem}
+    .about-visual{min-height:260px;border-radius:var(--radius-lg);background:linear-gradient(135deg, rgba(19,83,155,0.06), #ffffff);border:1px solid rgba(16,41,71,0.04);box-shadow:var(--shadow);display:grid;place-items:center;text-align:center;padding:24px;color:var(--brand)}
 
     /* Services */
     .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .card{background:#fff;border:1px solid #e3eee9;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    .icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#e6faf3;border:1px solid #d6efe6;color:var(--brand);font-size:20px;font-weight:800}
-    .card h3{margin:12px 0 8px;color:#183b32;font-size:1.15rem}
+    .card{background:#fff;border:1px solid rgba(16,41,71,0.04);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(47,164,255,0.07);border:1px solid rgba(47,164,255,0.12);color:var(--brand);font-size:20px;font-weight:800}
+    .card h3{margin:12px 0 8px;color:var(--brand);font-size:1.15rem}
     .card p{color:var(--muted);margin:0 0 10px}
-    .list{margin:0;padding-left:18px;color:#3a4b45;font-size:.98rem}
+    .list{margin:0;padding-left:18px;color:var(--muted);font-size:.98rem}
     .list li{margin:.25rem 0}
 
     /* Contact */
     .contact{display:grid;gap:22px;grid-template-columns:1fr 1fr}
-    .contact .form-card{background:var(--card);border:1px solid #e3eee9;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
+    .contact .form-card{background:var(--card);border:1px solid rgba(16,41,71,0.04);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
     .contact .form-card label{display:block;font-weight:600;margin:10px 0 6px}
-    .contact .form-card input,.contact .form-card textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #cfe2da;font-size:1rem;background:#fff}
+    .contact .form-card input,.contact .form-card textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #d1d8df;font-size:1rem;background:#fff}
     .contact .form-card textarea{resize:vertical;min-height:110px}
     .submit{margin-top:12px}
     .btn-accent{background:var(--accent);color:#fff} .btn-accent:hover{filter:brightness(.95);transform:translateY(-2px)}
-    .contact-info{background:#fff;border:1px solid #e3eee9;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
+    .contact-info{background:#fff;border:1px solid rgba(16,41,71,0.04);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
     .info-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
     .dot{width:10px;height:10px;border-radius:999px;background:var(--brand);margin-top:9px}
 
@@ -117,11 +127,11 @@
       margin-top:12px;
       font-weight:700;
     }
-    #formStatus.success{ background:#e6faf3; color:#0b3b2e; border:1px solid #cfeee2; display:block; }
+    #formStatus.success{ background:rgba(47,164,255,0.08); color:var(--brand); border:1px solid rgba(47,164,255,0.16); display:block; }
     #formStatus.error{ background:#fff0f0; color:#7a1f1f; border:1px solid #f5c6c6; display:block; }
 
     /* Footer */
-    footer{background:#0a2a22;color:#cfe6de;text-align:center;padding:28px 20px;margin-top:50px}
+    footer{background:linear-gradient(180deg,var(--brand),#0b2b47);color:#dbeafc;text-align:center;padding:28px 20px;margin-top:50px}
     footer .brand-foot{color:#fff;font-weight:800}
 
     @media (max-width:980px){
@@ -176,8 +186,8 @@
       </div>
       <div class="about-visual">
         <div>
-          <strong style="font-size:1.1rem;color:#0b3b2e;">Focus Areas</strong>
-          <p style="margin:.6rem 0 0">
+          <strong style="font-size:1.1rem;color:var(--brand);">Focus Areas</strong>
+          <p style="margin:.6rem 0 0;color:var(--muted)">
             Conference & FDP Operations • Proposal Strategy • Collaboration Design •
             Research Solutions in AI & ML, Nanomaterials, Nanocoatings, Thin Films •
             Indigenous Design and Development of Equipment for R&D
@@ -332,6 +342,5 @@
     })();
   </script>
 
-  <!-- rest of your body unchanged … -->
 </body>
 </html>
