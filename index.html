@@ -1,127 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JR Research & Consulting Solutions</title>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="JR Research & Consulting Solutions — trusted partner for academia and research. We provide end-to-end support for conferences, FDPs, high-impact research proposals, collaborations, and research solutions in AI, ML, nanomaterials, and quantum technologies.">
-  <meta name="keywords" content="JR Research, Consulting Solutions, Academic Conferences, FDPs, Research Proposals, AI ML, Nanomaterials, Nanocoatings, Thin Films, Research Collaborations, Quantum Technologies">
-  <meta name="author" content="JR Research & Consulting Solutions">
-
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="JR Research & Consulting Solutions" />
-  <meta property="og:description" content="End-to-end support for academic events, proposals, collaborations, and research solutions." />
-  <meta property="og:url" content="https://jrrcsolutions.in/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/logo.png" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="JR Research & Consulting Solutions" />
-  <meta name="twitter:description" content="End-to-end support for academic events, proposals, collaborations, and research solutions." />
-  <meta name="twitter:image" content="/assets/logo.png" />
-
-  <!-- Schema.org Organization JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "JR Research & Consulting Solutions",
-    "url": "https://jrrcsolutions.in/",
-    "logo": "/assets/logo.png",
-    "description": "Trusted partner for academia, research and innovation — specializing in conferences, FDPs, research proposals, AI/ML, nanomaterials, and collaborations.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer support",
-      "email": "jrrcsolutions@gmail.com",
-      "availableLanguage": ["English"]
-    },
-    "sameAs": [
-      "https://www.linkedin.com/",
-      "https://twitter.com/"
-    ]
-  }
-  </script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-
+  <link rel="stylesheet" href="styles.css">
   <style>
-    /* --- keep your CSS here (you had "your CSS unchanged …") --- */
-    /* Example minimal safe CSS so the page visibly renders while debugging: */
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;margin:0;padding:2rem;background:#fff;color:#111}
-    header{display:flex;align-items:center;gap:12px}
-    img.logo{height:56px}
-    main{max-width:980px;margin-top:1rem}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background: #002147;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 5px 0 15px;
+      font-size: 1.1rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('banner.jpg') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #002147;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact-form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .contact-form button {
+      margin-top: 15px;
+      background: #002147;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-status {
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .success {
+      color: green;
+    }
+    .error {
+      color: red;
+    }
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+    footer a {
+      color: #fff;
+      margin: 0 8px;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <img src="/assets/logo.png" alt="JR Research & Consulting Solutions" class="logo" onerror="this.style.display='none'">
-    <div>
-      <h1>JR Research & Consulting Solutions</h1>
-      <p>Trusted Partner for Academia, Research & Innovations</p>
-    </div>
+    <h1>JR Research & Consulting Solutions</h1>
+    <p>Trusted Partner for Academia, Research & Innovations</p>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <!-- Put a minimal visible fallback content so users see something while debugging -->
-    <section id="hero">
-      <h2>Welcome</h2>
-      <p>If you can see this text, GitHub Pages is serving your site correctly. Interactive features load only on allowed domains.</p>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Empowering Research, Innovation & Academic Excellence</h2>
+    <p>We provide expert guidance and end-to-end solutions for researchers, institutions, and innovators.</p>
+  </section>
 
-    <!-- your original HTML content can follow here (restore replaced parts later) -->
-  </main>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      JR Research & Consulting Solutions is dedicated to bridging the gap between academia and industry. 
+      With expertise in research consultancy, project drafting, conference organization, and capacity-building programs, 
+      we empower institutions and individuals to achieve their academic and professional goals.
+    </p>
+  </section>
 
-  <!-- ===== Conditional script loader =====
-       This avoids executing vendor / insights scripts unless host is allowed.
-       Add or remove filenames in `siteScripts` as required.
-  -->
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Research Proposal Drafting</h3>
+        <p>Expert guidance in drafting, reviewing, and submitting high-quality project proposals.</p>
+      </div>
+      <div class="service-card">
+        <h3>Conference Organization</h3>
+        <p>National & International conference planning, execution, and publication support.</p>
+      </div>
+      <div class="service-card">
+        <h3>Faculty Development Programs (FDPs)</h3>
+        <p>Workshops and training programs designed to enhance faculty expertise in emerging areas.</p>
+      </div>
+      <div class="service-card">
+        <h3>Academic & Industrial Collaborations</h3>
+        <p>Connecting academia with industry for research, consultancy, and innovation opportunities.</p>
+      </div>
+      <div class="service-card">
+        <h3>Workshops & Training</h3>
+        <p>Customized workshops for skill development, research methodology, and advanced technologies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-form">
+      <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" name="_replyto" id="email" required>
+
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" id="subject" required>
+
+        <label for="message">Your Message</label>
+        <textarea name="message" id="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 JR Research & Consulting Solutions. All rights reserved.</p>
+    <div>
+      <a href="#">LinkedIn</a> | 
+      <a href="#">ResearchGate</a> | 
+      <a href="#">Google Scholar</a>
+    </div>
+  </footer>
+
+  <!-- JS for Form Handling -->
   <script>
-    (function(){
-      // ALLOWED_HOSTS: add any hostnames where you want full JS behavior
-      const ALLOWED_HOSTS = [
-        'jrrcsolutions.in',
-        'www.jrrcsolutions.in',
-        'localhost',
-        '127.0.0.1'
-      ];
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("formStatus");
 
-      const host = window.location.hostname;
-      const isAllowed = ALLOWED_HOSTS.includes(host);
-
-      // List the script filenames you normally include that were causing errors.
-      // Edit this list to match your actual asset names if different.
-      const siteScripts = [
-        '/assets/content.js',
-        '/assets/read.js',
-        '/assets/general.js',
-        '/assets/selection.3fa02834.js' // example - remove or replace if not present
-      ];
-
-      if (!isAllowed) {
-        console.warn('Host not in allowlist — skipping non-essential scripts for:', host);
-        // Optionally expose a global flag to let other scripts know:
-        window._JRCS_SKIP_INIT = true;
-        return;
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+      const data = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          status.textContent = "✅ Thank you! Your message has been sent.";
+          status.className = "form-status success";
+          form.reset();
+        } else {
+          status.textContent = "❌ Oops! There was a problem sending your message.";
+          status.className = "form-status error";
+        }
+      } catch (error) {
+        status.textContent = "❌ Network error. Please try again.";
+        status.className = "form-status error";
       }
-
-      // If host allowed, load each script dynamically and attach safe .catch wrappers where possible.
-      siteScripts.forEach(src => {
-        const s = document.createElement('script');
-        s.src = src;
-        s.defer = true;
-        s.onload = function(){ console.log('Loaded script', src); };
-        s.onerror = function(e){ console.warn('Failed to load', src, e); };
-        document.body.appendChild(s);
-      });
-    })();
+    });
   </script>
-
-  <!-- End -->
 </body>
 </html>
